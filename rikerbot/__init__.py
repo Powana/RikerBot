@@ -22,6 +22,7 @@ from .plugins.CPlugins import ExecPlugin, EventPlugin, IOPlugin, StatusPlugin, W
 from .plugins.StartPlugin import StartPlugin
 from .plugins.AuthPlugin import AuthPlugin
 from .plugins.KeepAlive import KeepAlivePlugin
+from .plugins.ChatHandler import ChatPlugin
 
 from .DependencySolver import solve_dependencies
 from .PluginBase import PluginBase, pl_announce, on_events

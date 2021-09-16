@@ -1,6 +1,8 @@
 # Copied wholesale from SpockBot, thanks Gjum
 import copy
 
+from rikerbot.CPluginLoader import PluginLoader
+
 
 def get_settings(defaults, settings):
   return dict(copy.deepcopy(defaults), **settings)
@@ -53,7 +55,7 @@ class PluginBase:
             cls.events[event_name] = [cls.events[event_name]] if isinstance(cls.events[event_name], str) else cls.events[event_name]
             cls.events[event_name].append(method.__name__)
 
-  def __init__(self, ploader, settings):
+  def __init__(self, ploader: PluginLoader, settings: dict):
     # Load the plugin's settings.
     self.settings = get_settings(self.defaults, settings)
     self.ploader = ploader
